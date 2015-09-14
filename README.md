@@ -1,0 +1,2 @@
+# IsNativeAppInstalled
+IsNativeAppInstalled API Explainer.
