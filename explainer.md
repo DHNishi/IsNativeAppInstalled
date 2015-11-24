@@ -22,6 +22,8 @@ isAppInstalledPromise.then(function(isAppInstalled) {
 
 In this example, we probe the installation status of an example app. In order to verify that the Android app package name corresponds to the correct Android app, we also provide the signatures included with the package. This is to avoid a situation of a package name collision causing an incorrect response.
 
+More generally, the verification is based on two parts -- the installed application identifier and the opaque strings which provide verification. Each platform would define its own method of using the application identifier and the opaque strings to verify the validity of the relationship between the origin and the app (if it is installed).
+
 If the application is not installed or if the application is installed but an association could not be verified between the site and the app, the promise is fulfilled with False.
 
 If the application is installed and an association can be proven between the website, the promise is fulfilled with True.
