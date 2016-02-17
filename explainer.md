@@ -9,7 +9,7 @@ This API is being developed with the assumption that a system exists to create a
 # Querying the native app installation status.
 
 ```js
-var isAppInstalledPromise = IsNativeAppInstalled.isAppInstalled("com.example.myapp", ["VERIFICATION_KEY", "OTHER_VERIFICATION_KEY"]);
+var isAppInstalledPromise = IsNativeAppInstalled.isAppInstalled({ packageName: "com.example.myapp", verificationKeys: ["VERIFICATION_KEY", "OTHER_VERIFICATION_KEY"]);
 isAppInstalledPromise.then(function(isAppInstalled) {
     // success
     if (!isAppInstalled) {
@@ -22,7 +22,7 @@ isAppInstalledPromise.then(function(isAppInstalled) {
 
 In this example, we probe the installation status of an example app. In order to verify that the Android app package name corresponds to the correct Android app, we also provide the signatures included with the package. This is to avoid a situation of a package name collision causing an incorrect response.
 
-More generally, the verification is based on two parts -- the installed application identifier and the opaque strings which provide verification. Each platform would define its own method of using the application identifier and the opaque strings to verify the validity of the relationship between the origin and the app (if it is installed).
+More generally, the verification is based on the strings in the map passed in. Each platform would define its own method of using an application identifier and the opaque strings to verify the validity of the relationship between the origin and the app (if it is installed).
 
 If the application is not installed or if the application is installed but an association could not be verified between the site and the app, the promise is fulfilled with False.
 
