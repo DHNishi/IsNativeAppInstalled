@@ -6,7 +6,7 @@ This document looks into how a web developer would use the Is App Installed API,
 # Describing a relationship from native application to website (and vice versa)
 This API is being developed with the assumption that a system exists to create associations from applications to web applications.
 
-We can define relationships between a web application and other applications by using the "related_applications" member of a web application.
+We can define relationships between a web application and other applications by using the "related_applications" member of the web application manifest.
 
 # Querying the installed local apps that specify the website.
 
