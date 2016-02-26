@@ -11,10 +11,11 @@ We can define relationships between a web application and other applications by 
 # Querying the installed local apps that specify the website.
 
 ```js
-var isAppInstalledPromise = navigator.listInstalledApps();
+var isAppInstalledPromise = navigator.getInstalledRelatedApps();
 isAppInstalledPromise.then(function(listOfInstalledApps) {
     // success
     for (var app of listOfInstalledApps) {
+        // These fields are specified by the Web App Manifest spec.
         console.log(app.platform);
         console.log(app.url);
         console.log(app.id);
